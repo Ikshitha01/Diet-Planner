@@ -1,0 +1,70 @@
+@tailwind base;
+
+/* my resets */
+html, body {
+  @apply h-full;
+}
+
+body {
+  font-size: 18px;
+  @apply flex flex-col font-sans text-gray-800 bg-gray-400;
+
+  --app-width: 640px;
+}
+
+hr {
+  @apply my-4 border-b;
+}
+
+:disabled {
+  @apply opacity-50;
+}
+
+input::placeholder {
+  @apply font-light;
+}
+
+svg {
+  fill: currentColor;
+}
+/* my resets end */
+
+
+@tailwind components;
+
+/* my components */
+
+.app-width {
+  max-width: var(--app-width);
+}
+
+.main-text-color {
+  @apply text-gray-800;
+}
+
+/* my components end */
+
+@tailwind utilities;
+
+/* put custom utilities here */
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.flex-full {
+  flex: 0 0 100%;
+}
+
+.v-gap-4 > * + * {
+  @apply mt-4;
+}
+
+.v-gap-2 > * + * {
+  @apply mt-2;
+}
+
+.h-gap > * + * {
+  @apply ml-4;
+}
+
