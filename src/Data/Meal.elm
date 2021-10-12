@@ -80,10 +80,6 @@ getGrams : FoodPortions -> Float
 getGrams =
     List.map Tuple.first >> List.sum
 
-
-{-| The KD Factor indicated the relationship of grams of fat to grams of protein and carbs.
-It is computed as a weighted average of the food's KD factor.
--}
 getKDFactor : FoodPortions -> Float
 getKDFactor foodPortions =
     List.foldl (\( grams, food ) kdFactor -> kdFactor + grams * Food.getKDFactor food) 0 foodPortions
